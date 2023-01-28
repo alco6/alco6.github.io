@@ -46,7 +46,7 @@
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
-                    gesture-handler
+                    marker-handler
                 ></a-entity>
                 <a-entity
                     id="M-model"
@@ -55,11 +55,26 @@
                     gltf-model="#M-asset"
                     animation-mixer="loop: repeat"
                     class="clickable"
-                    gesture-handler
+                    marker-handler
                 ></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
+
+        <script>
+            AFRAME.registerComponent('marker-handler', {
+                init: function () {
+                    this.el.addEventListener('markerFound', () => {
+                        this.el.setAttribute('visible', true);
+                    });
+                    this.el.addEventListener('markerLost', () => {
+                        this.el.setAttribute('visible', false);
+                    });
+                }
+            });
+        </script>
+
+
     </body>
 </html>
