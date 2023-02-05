@@ -48,8 +48,7 @@
                     rotation="0 30 -10"
                     class="clickable"
                     marker-handler
-                    event-set__markerFound="_visible: true"
-                    gesture-detector
+                    event-set__markerLost="_visible: true"
                 ></a-entity>
                 <a-entity
                     id="M-model"
@@ -60,13 +59,12 @@
                     animation-mixer="loop: repeat"
                     class="clickable"
                     marker-handler
-                    event-set__markerFound="_visible: true"
-                    gesture-detector
+                    event-set__markerLost="_visible: true"
                 ></a-entity>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
-
+    
         <script>
             AFRAME.registerComponent('marker-handler', {
                 init: function () {
@@ -77,10 +75,13 @@
                         this.el.setAttribute('visible', true);
                     });
                     this.el.addEventListener('click', () => {
-                        window.location.href = "https://mariasixto.wixsite.com/boda/";
+                        alert("Hi there!");
+
+                        //window.location.href = "https://mariasixto.wixsite.com/boda/";
                     });
                 }
             });
         </script>
     </body>
 </html>
+
