@@ -9,6 +9,22 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+
+        <script>
+            AFRAME.registerComponent('marker-handler', {
+                init: function () {
+                    this.el.addEventListener('markerFound', () => {
+                        this.el.setAttribute('visible', true);
+                    });
+                    this.el.addEventListener('markerLost', () => {
+                        this.el.setAttribute('visible', true);
+                    });
+                    this.el.addEventListener('mouseenter', () => {
+                        window.location.href = "https://mariasixto.wixsite.com/boda/";
+                    });
+                }
+            });
+        </script>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -66,21 +82,5 @@
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
-
-        <script>
-            AFRAME.registerComponent('marker-handler', {
-                init: function () {
-                    this.el.addEventListener('markerFound', () => {
-                        this.el.setAttribute('visible', true);
-                    });
-                    this.el.addEventListener('markerLost', () => {
-                        this.el.setAttribute('visible', true);
-                    });
-                    this.el.addEventListener('click', () => {
-                        window.location.href = "https://mariasixto.wixsite.com/boda/";
-                    });
-                }
-            });
-        </script>
     </body>
 </html>
