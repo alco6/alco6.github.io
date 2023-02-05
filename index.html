@@ -48,6 +48,8 @@
                     rotation="0 30 -10"
                     class="clickable"
                     marker-handler
+                    event-set__markerFound="_visible: true"
+                    draggable
                 ></a-entity>
                 <a-entity
                     id="M-model"
@@ -58,6 +60,8 @@
                     animation-mixer="loop: repeat"
                     class="clickable"
                     marker-handler
+                    event-set__markerFound="_visible: true"
+                    draggable
                 ></a-entity>
             </a-marker>
 
@@ -68,9 +72,6 @@
             AFRAME.registerComponent('marker-handler', {
                 init: function () {
                     this.el.addEventListener('markerFound', () => {
-                        this.el.setAttribute('visible', true);
-                    });
-                    this.el.addEventListener('markerLost', () => {
                         this.el.setAttribute('visible', true);
                     });
                 }
