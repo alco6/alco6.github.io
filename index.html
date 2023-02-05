@@ -29,7 +29,7 @@
                 ></a-asset-item>
             </a-assets>
 
-            <a-marker-camera
+            <a-marker
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
@@ -63,8 +63,8 @@
                     event-set__markerFound="_visible: true"
                     draggable
                 ></a-entity>
-            </a-marker-camera>
-
+            </a-marker>
+            <a-entity camera></a-entity>
         </a-scene>
 
         <script>
