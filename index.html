@@ -19,7 +19,10 @@
                     this.el.addEventListener('markerLost', () => {
                         this.el.setAttribute('visible', true);
                     });
-                    this.el.addEventListener('mouseenter', () => {
+                    this.el.addEventListener('touchend', () => {
+                        window.location.href = "https://mariasixto.wixsite.com/boda/";
+                    });
+                    this.el.addEventListener('click', () => {
                         window.location.href = "https://mariasixto.wixsite.com/boda/";
                     });
                 }
